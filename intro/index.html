@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Intro to JS</title>
+</head>
+<body>
+
+
+
+
+	<!--
+		We always put our JS files at the bottom of our HTML for 2 reasons:
+		1. PERFORMANCE: JS is a blocking resource, which means it forces the
+			browser to wait for it to finish downloading before the browser
+			can continue rendering.
+			Our users perceive that the website loads faster if it gets
+			rendered before the JS starts downloading
+		2. HTML MANIPULATION: We want to manipulate HTML with our JS, but the
+			HTML must be rendered to the screen before JS can do anything
+	-->
+	<script src="js/index.js"></script>
+
+	<script>
+		// Write JS directly between the two tags
+		// Only use this if you want your JS code to work only on this HTML page
+	</script>
+
+</body>
+</html>
