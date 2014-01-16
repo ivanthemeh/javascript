@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Tabs</title>
+  <link href="css/tabs.css" rel="stylesheet">
+</head>
+<body>
+
+  <ul class="tabs">
+    <li><a class="tab" data-state="current" href="#tab-1">Tab 1</a></li>
+    <li><a class="tab" href="#tab-2">Tab 2</a></li>
+    <li><a class="tab" href="#tab-3">Tab 3</a></li>
+  </ul>
+
+  <div class="tab-panel" data-state="current" id="tab-1">
+    <h1>Tab 1 Content</h1>
+  </div>
+
+  <div class="tab-panel" id="tab-2">
+    <h1>Tab 2 Content</h1>
+  </div>
+
+  <div class="tab-panel" id="tab-3">
+    <h1>Tab 3 Content</h1>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="js/tabs.js"></script>
+
+</body>
+</html>
