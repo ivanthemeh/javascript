@@ -1,28 +1,55 @@
-var $imgs = $('.slides img');
+var $items = $('.carousel-items img');
 
 $('.next').on('click', function () {
-  var current = $imgs.filter('[data-state="current"]').index();
-  var next = current + 1;
+	var current = $items.filter('[data-state="current"]').index();
+	var next = current + 1;
 
-  if (next > $imgs.length - 1) {
-    next = 0;
-  }
+	if (next >= $items.length) {
+		next = 0;
+	}
 
-  $imgs.eq(next).attr('data-state', 'incoming').css('left', '100%').animate({
-      left: 0
-    },
-    250,
-    function () {
-      $imgs.eq(next).attr('data-state', 'current');
-    }
-  );
+	$items.eq(next).attr('data-state', 'incoming').css('left', '100%').animate({
+			left: 0
+		},
+		250,
+		function () {
+			$items.eq(next).attr('data-state', 'current');
+		}
+	);
 
-  $imgs.eq(current).animate({
-      left: $imgs.eq(current).width() * -1
-    },
-    250,
-    function () {
-      $imgs.eq(current).attr('data-state', '');
-    }
-  );
+	$items.eq(current).animate({
+			left: $items.eq(current).width() * -1
+		},
+		250,
+		function () {
+			$items.eq(current).attr('data-state', '');
+		}
+	);
+});
+
+$('.prev').on('click', function () {
+	var current = $items.filter('[data-state="current"]').index();
+	var prev = current - 1;
+
+	if (prev < 0) {
+		prev = $items.length - 1;
+	}
+
+	$items.eq(prev).attr('data-state', 'incoming').css('left', $items.eq(current).width() * -1).animate({
+			left: 0
+		},
+		250,
+		function () {
+			$items.eq(prev).attr('data-state', 'current');
+		}
+	);
+
+	$items.eq(current).animate({
+			left: $items.eq(current).width()
+		},
+		250,
+		function () {
+			$items.eq(current).attr('data-state', '');
+		}
+	);
 });
