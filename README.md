@@ -2,6 +2,10 @@
 
 Code samples, documentation, tutorials, & videos for the [Algonquin College Graphic Design](http://algonquindesign.ca) program.
 
+**Links**
+
+- [Javascript: The Right Way](http://www.jstherightway.org/)
+
 ---
 
 ## License & Copyright
