@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+	<meta charset="utf-8">
+	<title>Animations &amp; Javascript</title>
+	<link href="css/animations.css" rel="stylesheet">
+</head>
+<body>
+
+	<section class="orbit-section">
+		<!-- Automatically animating logo -->
+		<div class="planet-wrapper">
+			<img class="planet" src="img/planet.svg" alt="">
+			<img class="rocket" src="img/rocket.svg" alt="">
+		</div>
+	</section>
+
+	<section class="sun-section">
+		<!-- Animate based on scroll position -->
+		<img class="sun" src="img/sun.svg" alt="">
+	</section>
+
+	<section class="dipper-section">
+		<!-- Animate on scroll into view -->
+		<img class="dipper" src="img/dipper.svg" alt="">
+	</section>
+
+	<section class="ships-section">
+		<!-- Animated multiple elements on scroll into view -->
+		<ul class="ships">
+			<li><img src="img/ship-1.svg" alt=""></li>
+			<li><img src="img/ship-2.svg" alt=""></li>
+			<li><img src="img/ship-3.svg" alt=""></li>
+			<li><img src="img/ship-4.svg" alt=""></li>
+		</ul>
+	</section>
+
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/animations.js"></script>
+</body>
+</html>
