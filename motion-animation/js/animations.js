@@ -4,7 +4,7 @@ var $dipper = $('.dipper');
 var $ships = $('.ships img');
 
 $win.on('scroll', function () {
-	$sun.css('-webkit-transform', 'rotate(-' + $win.scrollTop() / 5 + 'deg)');
+	$sun.css('transform', 'rotate(-' + $win.scrollTop() / 5 + 'deg)');
 });
 
 $('.dipper-section').waypoint(function () {

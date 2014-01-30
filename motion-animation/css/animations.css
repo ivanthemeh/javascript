@@ -42,6 +42,9 @@ section {
 	-webkit-transform-origin: 50% 90px;
 }
 
+/*
+	Don't forget all the other vendor prefixes
+*/
 @-webkit-keyframes rocket-rotation {
 	100% {
 		-webkit-transform: rotate(-360deg);
@@ -114,7 +117,7 @@ section {
 }
 
 .js-ships-delay-3 {
-	-webkit-animation-delay: 350ms;
+	-webkit-animation-delay: 250ms;
 }
 
 @-webkit-keyframes ship-fly {
