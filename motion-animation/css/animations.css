@@ -43,7 +43,12 @@ section {
 }
 
 /*
-	Don't forget all the other vendor prefixes
+	DON'T FORGET THE REST OF THE VENDOR PREFIXES
+	-ms-animation
+	-moz-animation
+	-o-animation
+	-webkit-animation
+	animation (without vendor prefix)
 */
 @-webkit-keyframes rocket-rotation {
 	100% {
@@ -66,11 +71,11 @@ section {
 
 .js-dipper-animate {
 	-webkit-animation: dipper-fade 2s linear forwards;
-	/*
-		How to apply styles before and after animating.
-		- `forwards` retain last computed value
-		animation-fill-mode: forwards;
-	*/
+  /*
+  animation-fill-mode: forwards;
+  Force the element to keep its state after the animation completes
+    therefore matching the styles of the last frame of animation
+  */
 }
 
 @-webkit-keyframes dipper-fade {
@@ -108,15 +113,15 @@ section {
 	-webkit-animation: ship-fly 1s ease-out forwards;
 }
 
-.js-ships-delay-1 {
+.ships li:first-child img {
 	-webkit-animation-delay: 100ms;
 }
 
-.js-ships-delay-2 {
+.ships li:nth-child(2) img {
 	-webkit-animation-delay: 200ms;
 }
 
-.js-ships-delay-3 {
+.ships li:last-child img {
 	-webkit-animation-delay: 250ms;
 }
 
