@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Tyrannosaurus",
+		"period": "Cretaceous",
+		"diet": "Carnivore"
+	},
+	{
+		"name": "Allosaurus",
+		"period": "Jurassic",
+		"diet": "Carnivore"
+	},
+	{
+		"name": "Spinosaurus",
+		"period": "Cretaceous",
+		"diet": "Carnivore"
+	},
+	{
+		"name": "Diplodocus",
+		"period": "Jurassic",
+		"diet": "Herbivore"
+	}
+]
