@@ -674,15 +674,15 @@ The switch statement also has an ‘else’ like mechanism: `default`.
 var planet = 'Venus';
 
 switch (planet) {
-	case 'Mercury' :
+	case 'Mercury':
 		// If planet is ‘Mercury’ this code will be executed
 		break;
 
-	case 'Venus' :
+	case 'Venus':
 		// If planet is ‘Venus’ this code will be executed
 		break;
 
-	default :
+	default:
 		// If none of the above conditions are met this code will be executed
 		// Default must always be last, like else
 		break;
@@ -695,13 +695,13 @@ switch (planet) {
 		// If planet is ‘Mercury’ this code will be executed
 		break;
 
-	case 'Venus' :
-	case 'Mars' :
+	case 'Venus':
+	case 'Mars':
 		// If planet is ‘Venus’ or ‘Mars’ this code will be executed
 		break;
 
-	case 'Earth' :
-	default :
+	case 'Earth':
+	default:
 		// If planet is ‘Earth’ or anything else
 		break;
 }
@@ -745,7 +745,7 @@ console.log(nameBits[1]);
 
 // Remove extra space from the start and end of the string
 var dino = '   Iguanodon   ';
-dino.trim();
+dino.trim(); // 'Iguanodon'
 ```
 
 ---
@@ -783,17 +783,17 @@ In Javascript, not all instructions require a semicolon (;) at the end of the st
 
 ## Videos
 
-- [Javascript: introduction](https://www.youtube.com/watch?v=j2ppuBwAATg&index=1&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: program flow](https://www.youtube.com/watch?v=WxRwf5KvNVI&index=2&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: variables & strings](https://www.youtube.com/watch?v=czTWbdwbt7E&index=3&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: numbers](https://www.youtube.com/watch?v=LLAd7PybpdQ&index=4&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: boolean datatypes](https://www.youtube.com/watch?v=tScxERK1fMY&index=5&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: if-statements & boolean logic](https://www.youtube.com/watch?v=4lATbwt87Cs&index=6&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: loops](https://www.youtube.com/watch?v=ClT5XRDOEIY&index=7&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: functions](https://www.youtube.com/watch?v=-o4NCu7v4Ug&index=8&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: arrays](https://www.youtube.com/watch?v=ENU7mdIlCFA&index=9&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: objects](https://www.youtube.com/watch?v=3otasvikEls&index=10&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
-- [Javascript: string manipulation](https://www.youtube.com/watch?v=XGo2qjc9acU&index=11&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+1. [Javascript: introduction](https://www.youtube.com/watch?v=j2ppuBwAATg&index=1&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+2. [Javascript: program flow](https://www.youtube.com/watch?v=WxRwf5KvNVI&index=2&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+3. [Javascript: variables & strings](https://www.youtube.com/watch?v=czTWbdwbt7E&index=3&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+4. [Javascript: numbers](https://www.youtube.com/watch?v=LLAd7PybpdQ&index=4&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+5. [Javascript: boolean datatypes](https://www.youtube.com/watch?v=tScxERK1fMY&index=5&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+6. [Javascript: if-statements & boolean logic](https://www.youtube.com/watch?v=4lATbwt87Cs&index=6&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+7. [Javascript: loops](https://www.youtube.com/watch?v=ClT5XRDOEIY&index=7&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+8. [Javascript: functions](https://www.youtube.com/watch?v=-o4NCu7v4Ug&index=8&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+9. [Javascript: arrays](https://www.youtube.com/watch?v=ENU7mdIlCFA&index=9&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+10. [Javascript: objects](https://www.youtube.com/watch?v=3otasvikEls&index=10&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+11. [Javascript: string manipulation](https://www.youtube.com/watch?v=XGo2qjc9acU&index=11&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
 
 ## Links
 
