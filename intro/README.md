@@ -1,4 +1,4 @@
-# Intro to Javascript
+# Intro, syntax, structures
 
 Javascript is a general purpose programming language originally created for use inside web browsers, but now works just as well on servers.
 

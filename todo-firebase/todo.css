@@ -1,8 +1,0 @@
-.todo-list > li {
-	cursor: pointer;
-}
-
-.todo-list [data-state="done"] {
-	text-decoration: line-through;
-	color: #ccc;
-}
