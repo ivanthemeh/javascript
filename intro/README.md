@@ -4,7 +4,7 @@ Javascript is a general purpose programming language originally created for use 
 
 The syntax is very similar to other popular languages including [PHP](http://en.wikipedia.org/wiki/PHP), [Perl](http://en.wikipedia.org/wiki/Perl) and [Java](http://en.wikipedia.org/wiki/Java_(programming_language))—they all sharing similar structure of parenthesis, brackets, and semi-colons.
 
-#### [▶ Video playlist for Javascript](https://www.youtube.com/watch?v=j2ppuBwAATg&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
+### [▶ Video playlist for Javascript](https://www.youtube.com/watch?v=j2ppuBwAATg&list=PLWjCJDeWfDdcKlUX7kWCdphdZkSOOlOFU)
 
 ---
 
@@ -24,7 +24,7 @@ The syntax is very similar to other popular languages including [PHP](http://en.
 - [Arrays](#arrays)
 - [Objects](#objects)
 - [If-statements](#if-statements)
-	- [And/or](#and-or)
+	- [And/or](#andor)
 	- [Not equal](#not-equal)
 	- [Single equals vs. double equals vs. triple equals](#single-equals-vs-double-equals-vs-triple-equals)
 	- [Type coercion](#type-coercion)
