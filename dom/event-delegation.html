@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Event Delegation</title>
+  <link href="css/event-delegation.css" rel="stylesheet">
+</head>
+<body>
+
+  <ol class="dinos"></ol>
+
+  <script id="template" type="x-tmpl-mustache">
+    {{#dinos}}
+      <li>
+        <h2>{{name}}</h2>
+        <p>Diet: {{diet}}</p>
+        <button class="btn">Click Me!</button>
+      </li>
+    {{/dinos}}
+  </script>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="js/mustache.min.js"></script>
+  <script src="js/templates-data.js"></script>
+  <script src="js/event-delegation.js"></script>
+</body>
+</html>
