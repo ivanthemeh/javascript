@@ -10,7 +10,6 @@ A video series and code examples showing you how to make a bunch of common websi
 	- [Toggle panels](#toggle-panels)
 	- [Tabs](#tabs)
 	- [Lightbox](#lightbox)
-	- [Extra data](#extra-data)
 	- [Data filter](#data-filter)
 - [Videos](#videos)
 
