@@ -15,6 +15,8 @@ Common Javascript effects used on websites: triggering animations, scrolling eff
 		- [Waypoint offsets](#waypoint-offsets)
 		- [Waypoint direction](#waypoint-direction)
 - [Smooth scroll](#smooth-scroll)
+- [Videos](#videos)
+- [Links](#links)
 
 ---
 
