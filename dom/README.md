@@ -2,7 +2,7 @@
 
 The DOM—Document Object Model—is the system that Javascript uses to interact with HTML. The DOM is really Javascript’s representation of your HTML document that can be fully manipulated.
 
-### [▶ Video playlist for Javascript DOM]()
+### [▶ Video playlist for Javascript DOM](https://www.youtube.com/watch?v=q7nSkqmNpMY&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
 
 ---
 
@@ -15,6 +15,7 @@ The DOM—Document Object Model—is the system that Javascript uses to interact
 		- [Looping over collections in jQuery](#looping-over-collections-in-jquery)
 - [Listening to events](#listening-to-events)
 	- [Events in plain JS](#events-in-plain-js)
+		- [The event object](#the-event-object)
 	- [Events in jQuery](#events-in-jQuery)
 	- [Event propagation](#event-propagation)
 	- [Event delegation](#event-delegation)
@@ -180,6 +181,8 @@ btn.addEventListener('click', function () {
 });
 ```
 
+#### The event object
+
 When an event function is executed Javascript passes an argument to the function called the `EventObject`.
 
 The EventObject houses a bunch of important functions and information about the event that was just executed.
@@ -189,6 +192,7 @@ var btn = document.querySelector('.btn');
 
 btn.addEventListener('click', function (e) {
 	// Capture the EventObject into the argument named `e`
+	e.target; // A reference to the element the event fired on
 });
 ```
 
@@ -215,57 +219,328 @@ $('html').on('keydown', function (e) {
 
 ### Event propagation
 
+Events follow a propagation in Javascript that includes the capture phase: starting at the `<html>` element and working down the children until it hits the element; then the bubbling phase that goes backwards up the parents of the element. *On each element in the capturing and bubbling phase an event is fired.*
+
+**Capturing phase:**
+
+```html
+<html> <!-- 1. Event will fire here first -->
+	<body> <!-- 2. Then here -->
+		<div> <!-- 3. -->
+			<a> <!-- 4. Finally the event will fire on the element you're listening to -->
+```
+
+**Bubbling phase:**
+
+```html
+<html> <!-- 4. Finally ending here -->
+	<body> <!-- 3. Then here -->
+		<div> <!-- 2. Then it will traverse up to the the parent -->
+			<a> <!-- 1. The event already fired here -->
+```
+
+We can control the capturing & bubbling of events using a few functions.
+
+```js
+$('a').on('click', function (e) {
+	// Will stop the element from doing what it normally does
+	e.preventDefault();
+	// Will stop the event bubbling back up through its parents
+	e.stopImmediatePropagation();
+});
+```
+
+*Using `e.preventDefault()` on `<a>` tags will stop the browser from navigating to another page.*
+
 ### Event delegation
+
+Sometimes we need to capture events on elements that don’t exist yet, or when there’s lots and lots of elements where binding events to all of them would be a performance issue.
+
+For this we can use event delegation.
+
+```html
+<ul class="dinos">
+	<li>Stegosaurus</li>
+	<li>Tyrannosaurus</li>
+	<li>Apatosaurus</li>
+</ul>
+```
+
+With this HTML we can bind our event to the `<ul>` itself, but then only listen for events that fire on the `<li>` elements.
+
+```js
+$('.dinos').on('click', 'li', function () {
+	// Notice the `li` above indicating the delegated element
+});
+```
+
+**Links**
+
+- [Learn jQuery: Events](http://learn.jquery.com/events/)
 
 ---
 
 ## Manipulating classes
 
+When manipulating CSS from Javascript it’s very easy to just add the styles directly into the CSS. But from a maintainability & collaboration perspective it’s good to not cross the streams: keep HTML in HTML, CSS in CSS, and only JS in JS.
+
+It’s best practice to to just add and remove classes on elements: CSS classes are the contract between your Javascript and your HTML/CSS. *The CSS can deal only with styling and the JS only deals with activating that CSS.*
+
 ### Naming conventions
+
+When using classes specifically for Javascript it’s best practice to prepend them with `js-`, so everybody is clear on their purpose.
+
+```css
+.js-active {
+	display: block;
+}
+
+.js-highlight {
+	background-color: #ff3;
+}
+```
 
 ### Class manipulation with plain JS
 
+There are two ways to manipulate classes in plain Javascript: `className` and `classList`. Using `className` is more direct and will work in every browser, but isn’t convenient. Using `classList` is much simpler but is only supported in newer browsers.
+
+`className` is a string that represents all the contents of the `class=""` attribute—so we need to manipulate it like a standard string.
+
+```js
+var btn = document.querySelector('.btn');
+
+// Add a class: you have to use `+=` because `className` is just a string
+btn.className += 'js-highlight';
+// Remove a class: because `className` is just a string we need to use `replace()`
+btn.className.replace('js-highlight', '');
+```
+
+`classList` is newer and far more convenient to use.
+
+```js
+var btn = document.querySelector('.btn');
+
+// Add a class with `add()`
+btn.classList.add('js-highlight');
+// Remove a class with `remove()`
+btn.classList.remove('js-highlight');
+// Toggle a class on/off with `toggle()`
+btn.classList.toggle('js-highlight');
+// Check to see if the element has a class
+btn.classList.contains('js-highlight');
+```
+
+**Links**
+
+- [MDN: classList](https://developer.mozilla.org/en-US/docs/Web/API/Element.classList)
+
 ### Class manipulation with jQuery
+
+Class manipulation in jQuery is very similar to `classList`, in fact `classList` as inspired by jQuery and other Javascript libraries.
+
+```js
+var $btn = $('.btn');
+
+// Add a class with `addClass()`
+$btn.addClass('js-highlight');
+// Remove a class with `removeClass()`
+$btn.removeClass('js-highlight');
+// Toggle a class on/off with `toggleClass()`
+$btn.toggleClass('js-highlight');
+// Check to see if the element has a class
+$btn.hasClass('js-highlight');
+```
+
+**Links**
+
+- [jQuery: addClass](http://api.jquery.com/addClass/)
+- [jQuery: removeClass](http://api.jquery.com/removeClass/)
+- [jQuery: toggleClass](http://api.jquery.com/toggleClass/)
+- [jQuery: hasClass](http://api.jquery.com/hasClass/)
 
 ---
 
 ## Manipulating HTML
 
+When manipulating HTML the [parent-child relationship](https://github.com/algonquindesign/html-css/tree/gh-pages/html-semantics#parent-child-relationship) is extremely important to remember.
+
+There are a bunch of different functions to manipulate HTML using jQuery.
+
+- `.append()` — will add HTML inside, after all the other children
+- `.prepend()` — will add HTML inside, before all the other children
+- `.before()` — will add HTML before the element
+- `.after()` — will add HTML after the element
+- `.remove()` — will completely delete the element
+- `.html()` — will replace all the HTML inside the element
+
+Here are some examples:
+
+```html
+<ul class="dinos">
+	<li class="first">Stegosaurus</li>
+</ul>
+```
+
+```js
+var $dinos = $('.dinos');
+var $first = $('.first');
+
+// Add after all the current list items
+$dinos.append('<li>Tyrannosaurus</li>');
+// Add before all the current list items
+$dinos.prepend('<li>Iguanodon</li>');
+
+// Add a new element before the selected element
+$first.before('<li>Pteranodon</li>');
+// Add a new element after the selected element
+$first.after('<li>Dimetrodon</li>');
+
+// Completely delete a list item
+$first.remove();
+
+// Replace all the list items with new ones
+$dinos.html('<li>Humans</li><li>Birds</li>');
+```
+
+*All of the above stuff can be done with plain Javascript but in a more round-about way.*
+
 ---
 
 ## Form data
 
+Working with forms is very common when it comes to Javascript applications.
+
 ### Form submission event
+
+The first thing to do when dealing with forms is to capture the form’s submission event and prevent it from doing what it normally does.
+
+```html
+<form class="form" method="post" action="capture-data.html">
+
+</form>
+```
+
+```js
+var $form = $('.form');
+
+$form.on('submit', function (e) {
+	// Stop the form from doing what it normally does
+	e.preventDefault();
+});
+```
 
 ### Getting form values
 
+When working with forms we need to get the information from the form and do something with it.
+
 #### Simple values
+
+For simple inputs like: text, number, color, date, time, url, email, etc. we can just use jQuery’s `val()` function.
+
+```js
+var $email = $('.email');
+
+// Will get the information the user typed into the input field
+$email.val();
+```
 
 #### Checkboxes
 
+For checkboxes we need to confirm whether or not the item is checked, like this:
+
+```js
+var $terms = $('.terms');
+
+$terms.is(':checked'); // true or false
+```
+
 #### Radio buttons
 
+For radio buttons we need to grab them by their group `name` then find the one that has been checked, getting it’s value.
+
+```html
+<input type="radio" id="meat" name="diet" value="Meat" checked>
+<input type="radio" id="plant" name="diet" value="Plant">
+```
+
+```js
+$('[name="diet"]:checked').val(); // Meat
+```
+
+*It’s important that radio buttons include the `value` attribute when working with them.*
+
 #### Select elements
+
+Select elements work like basic text inputs, but must be set up differently, specifically all the `option` elements need `value` attributes.
+
+```html
+<select class="dinos">
+	<option value="stego">Stegosaurus</option>
+	<option value="trex" selected>Tyrannosaurus</option>
+	<option value="pterano">Pteranodon</option>
+</select>
+```
+
+```js
+$('.dinos').val(); // trex
+```
 
 ---
 
 ## Templates
 
+Just like CSS and Javascript, we don’t want to cross the streams—so templates allow us to keep our HTML in the HTML file and not have it in our Javascript code.
+
 ### Mustache
+
+There are lots of different Javascript template engines; one really popular one is Mustache.
+
+In our HTML we would provide the template, like this:
+
+```html
+<script id="template" type="x-tmpl-mustache">
+	<h1>Hello {{name}}!</h1>
+</script>
+```
+
+Using Javascript, we can read the template and put some information into it:
+
+```js
+// Mustache uses objects to represent the data for the template
+var data = {
+	name: 'Thomas'
+};
+
+// We grab the template from our HTML and get it ready
+var template = $('#template').html();
+Mustache.parse(template);
+
+// Then we take the template and render it with our data
+var rendered = Mustache.render(template, data);
+
+// We could then insert the rendered HTML into our page
+$('body').html(rendered);
+```
+
+**Links**
+
+- [Mustache](http://mustache.github.io/)
+- [Mustache documentation](https://github.com/janl/mustache.js)
+- [Handlebars](http://handlebarsjs.com/)
 
 ---
 
 ## Videos
 
-1. [Javascript DOM: selecting HTML elements]()
-2. [Javascript DOM: events]()
-3. [Javascript DOM: event propagation]()
-4. [Javascript DOM: manipulating classes]()
-5. [Javascript DOM: manipulating HTML]()
-6. [Javascript DOM: form data & events]()
-7. [Javascript DOM: templates]()
-8. [Javascript DOM: templates & forms]()
-9. [Javascript DOM: event delegation]()
+1. [Javascript DOM: selecting HTML elements](https://www.youtube.com/watch?v=q7nSkqmNpMY&index=1&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+2. [Javascript DOM: events](https://www.youtube.com/watch?v=YMrUgX2G1dc&index=2&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+3. [Javascript DOM: event propagation](https://www.youtube.com/watch?v=SjwoFeklLPo&index=3&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+4. [Javascript DOM: manipulating classes](https://www.youtube.com/watch?v=lU-JdTK6wAE&index=4&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+5. [Javascript DOM: manipulating HTML](https://www.youtube.com/watch?v=0m5ytkr25ug&index=5&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+6. [Javascript DOM: form data & events](https://www.youtube.com/watch?v=akNM35dRVGQ&index=6&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+7. [Javascript DOM: templates](https://www.youtube.com/watch?v=3EJ3rf-Yk0g&index=7&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+8. [Javascript DOM: templates & forms](https://www.youtube.com/watch?v=xQ-Y3APkbvQ&index=8&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
+9. [Javascript DOM: event delegation](https://www.youtube.com/watch?v=cWTI3er8EKI&index=9&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
 
 ## Links
 
