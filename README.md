@@ -5,6 +5,9 @@ Code samples, documentation, tutorials, & videos for the [Algonquin College Grap
 ---
 
 - [Intro, syntax, structures](intro)
+- [Document object model (DOM)](dom)
+- [Common components](components)
+- [Effects](effects)
 
 ---
 
