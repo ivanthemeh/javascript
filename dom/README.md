@@ -16,7 +16,7 @@ The DOM—Document Object Model—is the system that Javascript uses to interact
 - [Listening to events](#listening-to-events)
 	- [Events in plain JS](#events-in-plain-js)
 		- [The event object](#the-event-object)
-	- [Events in jQuery](#events-in-jQuery)
+	- [Events in jQuery](#events-in-jquery)
 	- [Event propagation](#event-propagation)
 	- [Event delegation](#event-delegation)
 - [Manipulating classes](#manipulating-classes)
