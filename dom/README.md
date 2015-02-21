@@ -49,7 +49,7 @@ You can use either plain Javascript or jQuery with you’re developing your webs
 jQuery is simple to use on your website, you just have to include the jQuery Javascript file and you’ll inherit all of jQuery’s functionality.
 
 1. You can download the jQuery file from the website and put it in your `js` folder
-2. You can use jQuery’s content delivery network, CDN, to include jQuery
+2. You can use a content delivery network, CDN, to include jQuery
 
 ```html
 	<!-- Using the downloaded version of jQuery -->
@@ -73,7 +73,7 @@ Since much of what you want to do with Javascript is manipulate HTML, you first 
 
 Selecting elements in Javascript is really simple if you know how to select things in CSS—it uses the exact same selector system.
 
-*It’s helpful when beginning to pick one method, plain JS or jQuery, when selecting HTML elements.
+*It’s helpful, when beginning, to pick one method, plain JS or jQuery, when selecting HTML elements.*
 
 ### Selecting with plain JS
 
@@ -127,11 +127,11 @@ for (i = 0; i < thePTags.length; i++) {
 
 ### Selecting with jQuery
 
-With jQuery, selecting things is the same as Javascript: it uses CSS selectors.
+With jQuery, selecting things is the same as plain Javascript: it uses CSS selectors.
 
 *If you select something using plain JS, you can’t use jQuery functions without selecting it with jQuery. If you select something with jQuery, you can’t use plain JS functions.*
 
-- `$('#thing')` — will select an element with the id of `thing`
+- `$('#thing')` — will select an element with the ID of `thing`
 - `$('div')` — select all the `div` elements on the page
 - `$('.thang')` — will select all the elements with the class of `thang`
 
@@ -167,7 +167,7 @@ $thePTags.each(function (i) {
 
 ## Listening to events
 
-When writing Javascript, responding to events is a big part of what your code does. Your code and either respond to user-triggered events or browser-triggered events.
+When writing Javascript, responding to events is a big part of what your code does. Your code can either respond to user-triggered events or browser-triggered events.
 
 ### Events in plain JS
 
@@ -183,7 +183,7 @@ btn.addEventListener('click', function () {
 
 #### The event object
 
-When an event function is executed Javascript passes an argument to the function called the `EventObject`.
+When an event function is executed, Javascript passes an argument to the function called the `EventObject`.
 
 The EventObject houses a bunch of important functions and information about the event that was just executed.
 
@@ -226,7 +226,7 @@ Events follow a propagation in Javascript that includes the capture phase: start
 ```html
 <html> <!-- 1. Event will fire here first -->
 	<body> <!-- 2. Then here -->
-		<div> <!-- 3. -->
+		<div> <!-- 3. And here -->
 			<a> <!-- 4. Finally the event will fire on the element you're listening to -->
 ```
 
@@ -254,7 +254,7 @@ $('a').on('click', function (e) {
 
 ### Event delegation
 
-Sometimes we need to capture events on elements that don’t exist yet, or when there’s lots and lots of elements where binding events to all of them would be a performance issue.
+Sometimes we need to capture events on elements that don’t exist yet, or when there’s lots and lots of elements where binding listeners to all of them would be a performance issue.
 
 For this we can use event delegation.
 
@@ -284,7 +284,7 @@ $('.dinos').on('click', 'li', function () {
 
 When manipulating CSS from Javascript it’s very easy to just add the styles directly into the CSS. But from a maintainability & collaboration perspective it’s good to not cross the streams: keep HTML in HTML, CSS in CSS, and only JS in JS.
 
-It’s best practice to to just add and remove classes on elements: CSS classes are the contract between your Javascript and your HTML/CSS. *The CSS can deal only with styling and the JS only deals with activating that CSS.*
+It’s best practice to just add and remove classes on elements: CSS classes are the contract between your Javascript and your HTML/CSS. *The CSS can deal only with styling and the JS only deals with activating that CSS.*
 
 ### Naming conventions
 
@@ -310,7 +310,7 @@ There are two ways to manipulate classes in plain Javascript: `className` and `c
 var btn = document.querySelector('.btn');
 
 // Add a class: you have to use `+=` because `className` is just a string
-btn.className += 'js-highlight';
+btn.className += ' js-highlight'; // Make sure there's a space between this class and the previous
 // Remove a class: because `className` is just a string we need to use `replace()`
 btn.className.replace('js-highlight', '');
 ```
@@ -368,8 +368,8 @@ There are a bunch of different functions to manipulate HTML using jQuery.
 
 - `.append()` — will add HTML inside, after all the other children
 - `.prepend()` — will add HTML inside, before all the other children
-- `.before()` — will add HTML before the element
-- `.after()` — will add HTML after the element
+- `.before()` — will add HTML outside, before the element
+- `.after()` — will add HTML outside, after the element
 - `.remove()` — will completely delete the element
 - `.html()` — will replace all the HTML inside the element
 
@@ -489,7 +489,7 @@ $('.dinos').val(); // trex
 
 ## Templates
 
-Just like CSS and Javascript, we don’t want to cross the streams—so templates allow us to keep our HTML in the HTML file and not have it in our Javascript code.
+Just like not having CSS in our Javascript, we don’t want to cross the streams with our HTML—so templates allow us to keep our HTML in the HTML file and not have it in our Javascript code.
 
 ### Mustache
 
