@@ -209,7 +209,7 @@ $img.waypoint(function (direction) {
 
 **Links**
 
-- **[jQuery Waypoints](http://imakewebthings.com/waypoints/)**
+- [jQuery Waypoints](http://imakewebthings.com/waypoints/)
 
 ---
 
