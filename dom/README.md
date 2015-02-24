@@ -493,7 +493,7 @@ $('.dinos').val(); // trex
 4. [Javascript DOM: manipulating classes](https://www.youtube.com/watch?v=lU-JdTK6wAE&index=4&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
 5. [Javascript DOM: manipulating HTML](https://www.youtube.com/watch?v=0m5ytkr25ug&index=5&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
 6. [Javascript DOM: form data & events](https://www.youtube.com/watch?v=akNM35dRVGQ&index=6&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
-7. [Javascript DOM: event delegation]()
+7. [Javascript DOM: event delegation](https://www.youtube.com/watch?v=JStineSts7s&index=7&list=PLWjCJDeWfDdexVfek9nZEdmbyBL6_yP6Y)
 
 ## Links
 
