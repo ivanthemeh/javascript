@@ -3,17 +3,14 @@ var $name = $('.name');
 var $age = $('.age');
 var $dinos = $('.dinos');
 
-var template = $('#template').html();
-Mustache.parse(template);
-
 $form.on('submit', function (e) {
-  e.preventDefault();
+	e.preventDefault();
 
-  var dino = {
-    name: $name.val(),
-    age: $age.val(),
-    class: $('[name="diet"]:checked').val()
-  };
+	var $li = $('<li>');
+	var $nameH2 = $('<h2>').html($name.val());
+	var $ageP = $('<p>').html('Age: ' + $age.val() + ' million years old');
+	var $diet = $('[name="diet"]:checked')
 
-  $dinos.append(Mustache.render(template, dino));
+	$li.append($nameH2).append($ageP).addClass($diet.val());
+	$dinos.append($li);
 });
