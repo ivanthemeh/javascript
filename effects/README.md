@@ -16,6 +16,7 @@ Common Javascript effects used on websites: triggering animations, scrolling eff
 		- [Waypoint direction](#waypoint-direction)
 		- [Waypoints and parallax](#waypoints-and-parallax)
 - [Smooth scroll](#smooth-scroll)
+	- [Smooth scroll and parallax](#smooth-scroll-and-parallax)
 - [Videos](#videos)
 - [Links](#links)
 
@@ -209,7 +210,7 @@ $img.waypoint(function (direction) {
 
 #### Waypoints and parallax
 
-If you want to use Waypoints and [CSS Parallax](https://github.com/algonquindesign/html-css/tree/gh-pages/animations-effects#parallax) together, there’s just a few minor changes we have to make.
+If we want to use Waypoints and [CSS Parallax](https://github.com/algonquindesign/html-css/tree/gh-pages/animations-effects#parallax) together, there’s just a few minor changes we have to make.
 
 First, the `body` can’t be the scrollable element, for better browser support. We need to wrap the whole website in a `div`:
 
@@ -297,6 +298,18 @@ $('.nav').localScroll();
 ```
 
 *It’s important that when using LocalScroll you target the parent that includes all the `<a>` tags—not the `<a>` tag directly. Targeting the link directly won’t work with LocalScroll.*
+
+### Smooth scroll and parallax
+
+If we want to use smooth scrolling and [CSS Parallax](https://github.com/algonquindesign/html-css/tree/gh-pages/animations-effects#parallax) together, there’s just a few minor changes we have to make.
+
+In our Javascript we have to target a new element as the scrollable:
+
+```js
+$('.nav').localScroll({
+	target: '.wrapper' // Or just 'body' if we’re not also using Waypoints
+});
+```
 
 **Links**
 
