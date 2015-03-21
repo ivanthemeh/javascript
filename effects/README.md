@@ -14,6 +14,7 @@ Common Javascript effects used on websites: triggering animations, scrolling eff
 	- [Waypoints](#waypoints)
 		- [Waypoint offsets](#waypoint-offsets)
 		- [Waypoint direction](#waypoint-direction)
+		- [Waypoints and parallax](#waypoints-and-parallax)
 - [Smooth scroll](#smooth-scroll)
 - [Videos](#videos)
 - [Links](#links)
@@ -206,6 +207,48 @@ $img.waypoint(function (direction) {
 }, { offset: '50%' });
 ```
 
+#### Waypoints and parallax
+
+If you want to use Waypoints and [CSS Parallax](https://github.com/algonquindesign/html-css/tree/gh-pages/animations-effects#parallax) together, there’s just a few minor changes we have to make.
+
+First, the `body` can’t be the scrollable element, for better browser support. We need to wrap the whole website in a `div`:
+
+```html
+<div class="wrapper">
+	<!-- Whole website goes in here -->
+</div>
+```
+
+Then, we move all the scrollbar stuff from `body` onto this `div`:
+
+```css
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+```
+
+Finally, we just have to change the `context` that Waypoints uses to monitor scrolling on to our new `div`:
+
+```js
+var $img = $('.thing');
+
+$img.waypoint(function () {
+	// Javascript stuff here
+}, { context: '.wrapper' }); // Change the context to `.wrapper`
+```
+
+And that’s it: our waypoints and CSS parallax should work together!
 
 **Links**
 
