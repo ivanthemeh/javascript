@@ -17,6 +17,8 @@ Common Javascript effects used on websites: triggering animations, scrolling eff
 		- [Waypoints and parallax](#waypoints-and-parallax)
 - [Smooth scroll](#smooth-scroll)
 	- [Smooth scroll and parallax](#smooth-scroll-and-parallax)
+- [Manipulating SVG](#manipulating-svg)
+	- [Triggering SVG animations & transitions](#triggering-svg-animations--transitions)
 - [Videos](#videos)
 - [Links](#links)
 
@@ -318,6 +320,12 @@ $('.nav').localScroll({
 
 ---
 
+## Manipulating SVG
+
+### Triggering SVG animations & transitions
+
+---
+
 ## Videos
 
 1. [Javascript effects: triggering animations](https://www.youtube.com/watch?v=8NcbPhLulas&index=1&list=PLWjCJDeWfDdfAAbxA-H5XHQlGoLICyHe_)
@@ -325,6 +333,7 @@ $('.nav').localScroll({
 3. [Javascript effects: scrolling animations](https://www.youtube.com/watch?v=nhHqiGCG10E&index=3&list=PLWjCJDeWfDdfAAbxA-H5XHQlGoLICyHe_)
 4. [Javascript effects: waypoints](https://www.youtube.com/watch?v=5hPVpVtgle4&index=4&list=PLWjCJDeWfDdfAAbxA-H5XHQlGoLICyHe_)
 5. [Javascript effects: smooth scrolling](https://www.youtube.com/watch?v=OkmwkrSEBMo&index=5&list=PLWjCJDeWfDdfAAbxA-H5XHQlGoLICyHe_)
+6. [Javascript effects: trigger animations & transitions on SVGs](https://www.youtube.com/watch?v=HFdvTWVBplA&index=6&list=PLWjCJDeWfDdfAAbxA-H5XHQlGoLICyHe_)
 
 ## Links
 
