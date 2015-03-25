@@ -10,6 +10,7 @@ Common Javascript effects used on websites: triggering animations, scrolling eff
 	- [Triggering transitions](#triggering-transitions)
 	- [Listening for animations to end](#listening-for-animations-to-end)
 		- [Transition end](#transition-end)
+	- [Javascript animation libraries](#javascript-animation-libraries)
 - [Scrolling animations](#scrolling-animations)
 	- [Waypoints](#waypoints)
 		- [Waypoint offsets](#waypoint-offsets)
@@ -19,6 +20,7 @@ Common Javascript effects used on websites: triggering animations, scrolling eff
 	- [Smooth scroll and parallax](#smooth-scroll-and-parallax)
 - [Manipulating SVG](#manipulating-svg)
 	- [Triggering SVG animations & transitions](#triggering-svg-animations--transitions)
+	- [SVG manipulation libraries](#svg-manipulation-libraries)
 - [Videos](#videos)
 - [Links](#links)
 
@@ -113,6 +115,14 @@ $box.on('transitionend', function () {
 - [MDN: animationend](https://developer.mozilla.org/en-US/docs/Web/Events/animationend)
 - [Animating List Items](https://cssanimation.rocks/list-items/)
 - [Animate.css](http://daneden.github.io/animate.css/)
+
+### Javascript animation libraries
+
+For more complex animations and interactions there’s a bunch of Javascript libraries to help out.
+
+- **[GSAP](http://greensock.com/gsap)**
+- [Velocity.js](http://julian.com/research/velocity/)
+- [Textillate.js](http://jschr.github.io/textillate/)
 
 ---
 
@@ -323,6 +333,14 @@ $('.nav').localScroll({
 ## Manipulating SVG
 
 ### Triggering SVG animations & transitions
+
+### SVG manipulation libraries
+
+For more complex SVG animations and manipulations there’s a bunch of Javascript libraries to help out.
+
+- **[Snap.svg](http://snapsvg.io/)**
+- [SVG.js](http://www.svgjs.com/)
+- [Vivus](http://maxwellito.github.io/vivus/)
 
 ---
 
