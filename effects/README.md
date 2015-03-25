@@ -332,7 +332,58 @@ $('.nav').localScroll({
 
 ## Manipulating SVG
 
+With our SVG embedded directly in HTML we can treat the elements like any other HTML element and manipulate them with Javascript.
+
+```xml
+<div class="graphic">
+	<svg width="256" height="256" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<rect class="my-rect" x="10" y="10" width="75" height="50" />
+	</svg>
+</div>
+```
+
+Then, in Javascript, we can select and manipulate the elements. Here’s an example with jQuery:
+
+```js
+var $myRect = $('.my-rect');
+$myRect.css('fill', '#000');
+```
+
 ### Triggering SVG animations & transitions
+
+Since we can apply transitions and animations to our SVGs, we can also trigger them using Javascript.
+
+First we need to set up our CSS, something like this:
+
+```css
+.js-bounce {
+	animation: bounce 1s linear;
+}
+
+@keyframes bounce {
+	0% { top: 0; }
+	100% { top: 100px; }
+}
+```
+
+Then, just trigger it with `addClass`:
+
+```js
+var $graphic = $('.graphic');
+$graphic.addClass('js-bounce')
+```
+
+We could also do it with a waypoint:
+
+```js
+var $graphic = $('.graphic');
+
+$graphic.waypoint(function () {
+	$graphic.addClass('js-bounce');
+});
+```
+
+We can do exactly the same thing with transitions, treating SVG no differently than standard HTML elements.
 
 ### SVG manipulation libraries
 
