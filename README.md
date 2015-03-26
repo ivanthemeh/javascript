@@ -4,10 +4,14 @@ Code samples, documentation, tutorials, & videos for the [Algonquin College Grap
 
 ---
 
+- History
 - [Intro, syntax, structures](intro)
+- Debugging
 - [Document object model (DOM)](dom)
 - [Common components](components)
 - [Effects](effects)
+- AJAX
+- Templates
 
 ---
 
